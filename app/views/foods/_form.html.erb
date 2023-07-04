@@ -11,32 +11,28 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class='field form-group'>
+   
+    <%= form.text_field :name, class:'form-control', placeholder:"Food Name"%>
   </div>
-
-  <div>
-    <%= form.label :measurement_unit %>
-    <%= form.text_field :measurement_unit %>
+  <br>
+  <div class='field form-group'> 
+    <%= form.text_field :measurement_unit, class:'form-control', placeholder:"measurement_unit" %>
   </div>
-
-  <div>
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+  <br>
+  <div class='field form-group'>
+    <%= form.text_field :price, class:'form-control', placeholder:"price"%>
   </div>
-
-  <div>
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+  <br>
+  <div class='field form-group'>
+    <%= form.number_field :quantity, class:'form-control', placeholder:"quantity" %>
   </div>
-
-  <div>
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <br>
+  <div class='field form-group'>
+    <%= form.text_field :user_id, class:'form-control', placeholder:"user_id" %>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <br>
+  <div class='actions'>
+    <%= form.submit class:'btn btn-secondary' %>
   </div>
 <% end %>
