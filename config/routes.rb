@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "foods#index"
+  delete '/users/sign_out', to: 'sessions#destroy'
   resources :foods, only: [:create, :index, :destroy, :new]
   resources :shopping_lists, only: [:index]
 end
