@@ -1,10 +1,17 @@
 <h1>Each recipe details</h1>
 
 <div class='recipe-show'>
-<%= link_to 'Back to Recipes', recipes_path %>
-  <h2><%= @recipe.name %></h2>
+  <%= link_to 'Back to Recipes', recipes_path %>
+  <div>
+    <h2 class='recipe-header'><%= @recipe.name %></h2>
     <p>Preparation Time: <%= @recipe.preparation_time %></p>
     <p>Cooking Time: <%= @recipe.cooking_time %></p>
     <%= link_to 'Steps go here ...' %>
-    
+  </div>
+
+  <div class='recipeshow-btn'>
+   <button> Generate Shopping list </button>
+    <button>Add Ingredient</button>
+  </div>
+  <hr>
 </div>
