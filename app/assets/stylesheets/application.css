@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ .header{
+    color: white;
+ }
+
+ .Add{
+    float: right;
+    margin-bottom: 30px;
+ }
+ .foam{
+    position: center;
+ }
