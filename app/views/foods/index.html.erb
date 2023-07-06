@@ -19,10 +19,9 @@
      <td><%= food.measurement_unit %></td>
      <td><%= number_to_currency(food.price, unit: "$") %></td>
       <td><%= food.quantity %></td>
-      <td><%= food.user_id %></td>
-      <td><%= button_to "Delete", food, method: :delete %></td>
+      <td><%= button_to "Delete", food, method: :delete, data: {confirm:'are you sure?'},class:"btn btn-outline-danger btn-sm" %></td>
     </tr>
-  <% end %>
+    <% end %>
   </tbody>
 </div>
 </table>
