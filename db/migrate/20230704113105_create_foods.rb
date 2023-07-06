@@ -2,8 +2,10 @@ class CreateFoods < ActiveRecord::Migration[7.0]
   def change
     create_table :foods do |t|
       t.string :name
-      t.string :unit
-      t.string :pric
+      t.string :measurement_unit
+      t.decimal :price
+      t.integer :quantity
+      t.bigint :user_id
 
       t.timestamps
     end

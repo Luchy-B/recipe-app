@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_recipe, only: %i[show edit update destroy]
+
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
