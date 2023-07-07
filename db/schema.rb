@@ -16,14 +16,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_705_090_707) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
-  create_table 'foods', force: :cascade do |t|
-    t.string 'name'
-    t.string 'unit'
-    t.string 'pric'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-  end
-
   create_table 'recipe_foods', force: :cascade do |t|
     t.integer 'quantity'
     t.bigint 'recipe_id', null: false
@@ -42,12 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_705_090_707) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['user_id'], name: 'index_recipes_on_user_id'
-  end
-
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
   end
 
   add_foreign_key 'recipe_foods', 'recipes'

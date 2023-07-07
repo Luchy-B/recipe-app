@@ -1,18 +1,23 @@
 # frozen_string_literal: true
 
+# Controller for managing recipes
 class RecipesController < ApplicationController
+  # Lists all recipes
   def index
     @recipes = Recipe.all
   end
 
+  # Shows details of a specific recipe
   def show
     @recipe = Recipe.find(params[:id])
   end
 
+  # Displays a form to create a new recipe
   def new
     @recipe = Recipe.new
   end
 
+  # Creates a new recipe
   def create
     @recipe = Recipe.new(recipe_params)
 
@@ -24,6 +29,7 @@ class RecipesController < ApplicationController
     end
   end
 
+  # Displays a form to edit an existing recipe
   def edit
     @recipe = Recipe.find(params[:id])
   end

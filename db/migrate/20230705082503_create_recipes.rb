@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Create a class 'CreateRecipes' that inherits from 'ActiveRecord::Migration'
+# This class will create a new table called 'recipes'
 class CreateRecipes < ActiveRecord::Migration[7.0]
   def change
     create_table :recipes do |t|
