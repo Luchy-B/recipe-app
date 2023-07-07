@@ -49,6 +49,18 @@
   text-align: center;
 }
 
-.recipeshow-btn {
-  padding: 20px 0;
-}
+ .header{
+    color: white;
+ }
+
+ .Add{
+    float: right;
+    margin-bottom: 30px;
+ }
+ .foam{
+    position: center;
+ }
+
+ .recipeshow-btn {
+    padding: 20px 0px;
+ }

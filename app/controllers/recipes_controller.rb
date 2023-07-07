@@ -1,8 +1,11 @@
 # Controller for managing recipes
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_recipe, only: %i[show edit update destroy]
+
   # Lists all recipes
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   # Shows details of a specific recipe
