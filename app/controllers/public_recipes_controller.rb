@@ -57,6 +57,9 @@ class PublicRecipesController < ApplicationController
     end
   end
 
+  def toggle_button
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_public_recipe

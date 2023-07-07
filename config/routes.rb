@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # put 'recipes/:id/toggle_button', to: 'recipes#toggle_action', as: 'toggle_action'
   post '/toggle', to: 'recipe#toggle'
   put 'recipes/:id/toggle_button', to: 'recipes#toggle_action', as: 'toggle_action'
-
+  put 'recipes/:id/toggle_public', to: 'recipes#toggle_public', as: 'toggle_public'
   
 end
 

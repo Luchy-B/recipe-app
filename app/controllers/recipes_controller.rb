@@ -87,8 +87,13 @@ class RecipesController < ApplicationController
   # end
 
   def toggle_public
-    @recipe.toggle!(:public)
-    redirect_to user_recipe_path(current_user, @recipe)
+    recipe = Recipe.find(params[:id])
+    recipe[:public] = !recipe[:public]
+    if recipe.save!
+    redirect_to recipe_path(id: recipe.id)
+    else  
+      render :show, notice: "An error occured"
+    end
   end
 
   private
@@ -99,6 +104,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:id,:name, :preparation_time, :cooking_time, :description, :public)
   end
 end

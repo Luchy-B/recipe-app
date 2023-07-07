@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 
-<div class='recipe-show'>
-  <%= link_to 'Back to Recipes', recipes_path %>
-  <h2 class='recipe-header'><%= @recipe.name %></h2>
-
-  
-
-  
+<%= button_to toggle_public_path, method: :put, class: 'toggle-button' do %>
+  <% if @recipe[:public] %>
+    Toggle Off
+  <% else %>
+    Toggle On
+  <% end %>
+  <% end %>
 
   <div>
     <p><b>Preparation Time: </b><%= @recipe.preparation_time %></p>

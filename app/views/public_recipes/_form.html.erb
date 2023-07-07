@@ -32,9 +32,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :public %>
-    <%= form.check_box :public, class: "switch-toggle" %>
-  </div>
+  <%= form.label :public %>
+  <%= form.check_box :public, class: "switch-toggle", data: { remote: true, url: public_recipes_path } %>
+</div>
 
 
   <div>

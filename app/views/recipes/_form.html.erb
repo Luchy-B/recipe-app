@@ -1,5 +1,5 @@
-<%= form_with(model: recipe) do |form| %>
-  <% if recipe.errors.any? %>
+<%= form_with(model: @recipe) do |form| %>
+  <% if @recipe.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
@@ -31,10 +31,16 @@
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :public, style: "display: block" %>
-    <%= form.check_box :public %>
+  <div class="field">
+    <%= form.label :public %>
+    <%= form.check_box :public, class: "switch-toggle" %>
   </div>
+  
+  <% if @recipe.public.present? %>
+  <p>Public Status: <%= @recipe.public ? 'Public' : 'Not Public' %></p>
+<% else %>
+  <p>Public Status: N/A</p>
+<% end %>
 
   <div>
   <%= form.number_field :user_id, id: :food_user_id, class:'form-control', value:current_user.id, type: :hidden %>
