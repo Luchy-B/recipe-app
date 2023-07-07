@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Represents a Recipe Food in the system
 class RecipeFood < ApplicationRecord
   belongs_to :recipe

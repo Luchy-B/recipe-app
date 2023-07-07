@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Controller for managing recipes
 class RecipesController < ApplicationController
   # Lists all recipes
