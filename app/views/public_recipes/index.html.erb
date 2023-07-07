@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Public recipes</h1>
+
+<div id="public_recipes">
+  <% @public_recipes.each do |public_recipe| %>
+    <%= render public_recipe %>
+    <p>
+      <%= link_to "Show this public recipe", public_recipe %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New public recipe", new_public_recipe_path %>
