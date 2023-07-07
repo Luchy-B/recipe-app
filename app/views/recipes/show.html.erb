@@ -1,0 +1,18 @@
+<div class='recipe-show'>
+  <%= link_to 'Back to Recipes', recipes_path %>
+  <h2 class='recipe-header'><%= @recipe.name %></h2>
+  <div>
+    <p><b>Preparation Time: </b><%= @recipe.preparation_time %></p>
+    <p><b>Cooking Time: </b><%= @recipe.cooking_time %></p>
+    <p><b>Description: </b><%= @recipe.description %></p>
+  </div>
+
+  <div class='recipeshow-btn'>
+   <button> Generate Shopping list </button>
+    <button>Add Ingredient</button>
+  </div>
+  <hr>
+
+  <%= link_to "Add Recipe", new_recipe_path %>
+  <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+</div>
