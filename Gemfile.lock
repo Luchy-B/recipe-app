@@ -157,6 +157,7 @@ GEM
       activesupport (= 7.0.6)
       bundler (>= 1.15.0)
       railties (= 7.0.6)
+    rails-bootstrap-toggle-buttons (0.0.7)
     rails-dom-testing (2.1.1)
       activesupport (>= 5.0.0)
       minitest
@@ -237,7 +238,11 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)
+  rails-bootstrap-toggle-buttons
+  rubocop (>= 1.0, < 2.0)
+
   rails-ujs
+
   selenium-webdriver
   sprockets-rails
   stimulus-rails
