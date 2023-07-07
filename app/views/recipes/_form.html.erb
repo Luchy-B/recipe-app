@@ -1,0 +1,40 @@
+
+    <% if @errors.present? %>
+      <div>  
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+  
+      </div>
+    <% end %>
+    
+<%= form_for @recipe do |form| %>
+    <div class="form-field">
+      <%= form.label :Name %><br />
+      <%= form.text_field :name, placeholder: "Enter recipe name" %>
+    </div>
+    <div class="form-field">
+      <%= form.label :"Preparation Time" %><br />
+      <%= form.text_field :preparation_time, placeholder: "Enter preparation time" %>
+    </div>
+    <div class="form-field">
+      <%= form.label :"Cooking Time" %><br />
+      <%= form.text_field :cooking_time, placeholder: "Enter cookiing time" %>
+    </div>
+    <div class="form-field">
+      <%= form.label :Description %><br />
+      <%= form.text_area :description, placeholder: "Enter recipe description" %>
+    </div>
+    <div class="form-field">
+      <%= form.label :Public %><br />
+      <%= form.label :public, "YES", value: "true"  %>
+      <%= form.radio_button :public, true, checked: true %>
+      <%= form.label :public, "NO", value: "false" %>
+      <%= form.radio_button :public, false %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
