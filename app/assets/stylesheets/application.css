@@ -49,18 +49,15 @@
   text-align: center;
 }
 
- .header{
-    color: white;
- }
+.header {
+  color: white;
+}
 
- .Add{
-    float: right;
-    margin-bottom: 30px;
- }
- .foam{
-    position: center;
- }
+.Add {
+  float: right;
+  margin-bottom: 30px;
+}
 
- .recipeshow-btn {
-    padding: 20px 0px;
- }
+.recipeshow-btn {
+  padding: 20px 0;
+}
