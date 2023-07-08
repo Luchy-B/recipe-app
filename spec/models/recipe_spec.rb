@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-
   describe 'callbacks' do
     describe '#set_public' do
       it 'sets public attribute to false before saving' do

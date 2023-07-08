@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Ingredient, type: :model do
-
   describe 'attributes' do
     it 'has name, quantity, and value attributes' do
       ingredient = Ingredient.new
@@ -9,5 +8,3 @@ RSpec.describe Ingredient, type: :model do
     end
   end
 end
-
-

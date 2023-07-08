@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   let(:user) { User.new(email: 'john@example.com', password: 'password') }
-  subject { described_class.new(measurement_unit: 'grams', price: 2.5, quantity: 4, user: user) }
+  subject { described_class.new(measurement_unit: 'grams', price: 2.5, quantity: 4, user:) }
 
   describe 'validations' do
     it 'validates presence of measurement_unit' do

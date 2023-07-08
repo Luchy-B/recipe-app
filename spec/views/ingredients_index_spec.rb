@@ -15,7 +15,7 @@ RSpec.describe 'ingredients/new', type: :view do
   it 'renders the new ingredient form' do
     expect(rendered).to have_selector('h1', text: 'New Ingredient')
 
-    expect(rendered).to have_selector('form[action="' + recipe_ingredients_path(recipe) + '"]')
+    expect(rendered).to have_selector("form[action=\"#{recipe_ingredients_path(recipe)}\"]")
 
     expect(rendered).to have_selector('label[for="ingredient_name"]')
     expect(rendered).to have_selector('input#ingredient_name[type="text"]')

@@ -9,9 +9,9 @@ class FoodsController < ApplicationController
   end
 
   def show
-  @recipe = Recipe.find(params[:id])
-  @foods = @recipe.foods
- end
+    @recipe = Recipe.find(params[:id])
+    @foods = @recipe.foods
+  end
 
   def new
     @food = current_user.foods.build

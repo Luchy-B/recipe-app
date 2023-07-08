@@ -9,6 +9,6 @@ RSpec.describe User, type: :model do
       expect(user.email).to eq('kushie@gmail.com')
       expect(user.password).to eq('343434')
       expect(user.errors[:email]).to_not include("can't be blank")
-    end    
+    end
   end
 end

@@ -16,8 +16,8 @@ class GeneralShoppingListController < ApplicationController
     @total_price = @missing_foods.sum(:price)
 
     @recipe_ingredients = Ingredient.joins(:recipe).where(recipe_id: @recipes.pluck(:id))
-    @recipe_length=@recipe_ingredients.length
-    @total_price=@recipe_ingredients.sum(:value)
+    @recipe_length = @recipe_ingredients.length
+    @total_price = @recipe_ingredients.sum(:value)
   end
 
   def counts
