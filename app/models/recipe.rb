@@ -1,6 +1,5 @@
 # Represents a Recipes in the system
 class Recipe < ApplicationRecord
-  
   before_save :set_public
 
   belongs_to :user, foreign_key: :user_id
