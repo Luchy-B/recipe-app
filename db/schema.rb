@@ -24,24 +24,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_170133) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "migrates", force: :cascade do |t|
-    t.string "recipe_list"
-    t.string "name"
-    t.string "preparation_time"
-    t.string "cooking_time"
-    t.string "string"
-    t.text "description"
-    t.boolean "public"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "public_recipes", force: :cascade do |t|
     t.string "name"
     t.integer "preparation_time"
     t.integer "cooking_time"
     t.text "description"
-    t.boolean "public"
+    t.boolean "public", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_170133) do
     t.string "preparation_time"
     t.string "cooking_time"
     t.text "description"
-    t.string "public"
+    t.boolean "public", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

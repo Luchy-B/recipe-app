@@ -1,6 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-
 <%= button_to toggle_public_path, method: :put, class: 'toggle-button' do %>
   <% if @recipe[:public] %>
     Toggle Off
@@ -13,7 +12,7 @@
     <p><b>Preparation Time: </b><%= @recipe.preparation_time %></p>
     <p><b>Cooking Time: </b><%= @recipe.cooking_time %></p>
     <p><b>Description: </b><%= @recipe.description %></p>
-</div>
+  </div>
 
   <div class='recipeshow-btn'>
     <span><%= button_to "Generate Shopping list", new_recipe_path %></span>

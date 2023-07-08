@@ -60,35 +60,12 @@ class RecipesController < ApplicationController
     end
   end
 
-  # def toggle_action
-  #   @recipe = Recipe.find(params[:id])
-  #   @toggle_status = @recipe[:public]
-  #   @toggle_status = !@toggle_status
-  #   @recipe[:public] = @toggle_status
-  #   return unless @recipe.save
-
-  #   redirect_to recipe_path
-    # else
-    #   render :show, notice: "An error occured"
-  # end
-
-  # def toggle
-  #   if session[:button_active]
-      # Remove redirected page
-      # session[:button_active] = false
-      # Add logic to remove the redirected page
-    #   redirect_to recipe_path
-    # else
-      # Redirect to another page
-      # session[:button_active] = true
-      # Add logic for the redirected page
-  #     redirect_to public_recipes_path
-  #   end
-  # end
-
   def toggle_public
     recipe = Recipe.find(params[:id])
-    recipe[:public] = !recipe[:public]
+    toggle_status = recipe[:public]
+    toggle_status = !toggle_status
+    recipe[:public] = toggle_status
+    # return unless recipe.save
     if recipe.save!
     redirect_to recipe_path(id: recipe.id)
     else  

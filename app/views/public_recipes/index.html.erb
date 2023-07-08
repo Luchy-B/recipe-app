@@ -2,13 +2,11 @@
 
 <h1>Public recipes</h1>
 
-<div id="public_recipes">
-  <% @public_recipes.each do |public_recipe| %>
-    <%= render public_recipe %>
-    <p>
-      <%= link_to "Show this public recipe", public_recipe %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New public recipe", new_public_recipe_path %>
+<% @public_recipes.each do |public_recipe| %>
+  <div class="public_recipe">
+    <h3><%= public_recipe.name %></h3>
+    <p><strong>Preparation Time:</strong> <%= public_recipe.preparation_time %> minutes</p>
+    <p><strong>Cooking Time:</strong> <%= public_recipe.cooking_time %> minutes</p>
+    <p><%= public_recipe.description %></p>
+  </div>
+<% end %>

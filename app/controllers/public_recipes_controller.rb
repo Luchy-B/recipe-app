@@ -3,7 +3,7 @@ class PublicRecipesController < ApplicationController
 
   # GET /public_recipes or /public_recipes.json
   def index
-    @public_recipes = PublicRecipe.all
+    @public_recipes = Recipe.where(public: true)
   end
 
   # GET /public_recipes/1 or /public_recipes/1.json

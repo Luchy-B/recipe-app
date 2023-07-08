@@ -35,12 +35,6 @@
     <%= form.label :public %>
     <%= form.check_box :public, class: "switch-toggle" %>
   </div>
-  
-  <% if @recipe.public.present? %>
-  <p>Public Status: <%= @recipe.public ? 'Public' : 'Not Public' %></p>
-<% else %>
-  <p>Public Status: N/A</p>
-<% end %>
 
   <div>
   <%= form.number_field :user_id, id: :food_user_id, class:'form-control', value:current_user.id, type: :hidden %>
