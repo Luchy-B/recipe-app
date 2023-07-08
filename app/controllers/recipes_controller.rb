@@ -58,6 +58,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    @recipe.ingredients.destroy_all
     @recipe.destroy
 
     respond_to do |format|
