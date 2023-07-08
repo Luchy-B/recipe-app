@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_07_170133) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_08_130725) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_170133) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "foods_recipes", id: false, force: :cascade do |t|
+    t.bigint "food_id"
+    t.bigint "recipe_id"
+    t.index ["food_id"], name: "index_foods_recipes_on_food_id"
+    t.index ["recipe_id"], name: "index_foods_recipes_on_recipe_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantity"
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "recipe_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "public_recipes", force: :cascade do |t|
@@ -66,6 +83,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_170133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "foods_recipes", "foods"
+  add_foreign_key "foods_recipes", "recipes"
+  add_foreign_key "ingredients", "recipes"
   add_foreign_key "recipe_foods", "recipes"
   add_foreign_key "recipes", "users"
 end

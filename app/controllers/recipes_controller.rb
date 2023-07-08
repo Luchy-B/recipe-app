@@ -12,11 +12,17 @@ class RecipesController < ApplicationController
   # Shows details of a specific recipe
   def show
     @recipe = Recipe.find(params[:id])
+  @foods = @recipe.foods
   end
-
+  
   # Displays a form to create a new recipe
   def new
     @recipe = Recipe.new
+  end
+
+  def new_ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.new
   end
 
   # Creates a new recipe

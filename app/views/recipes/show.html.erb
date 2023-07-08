@@ -12,13 +12,38 @@
     <p><b>Preparation Time: </b><%= @recipe.preparation_time %></p>
     <p><b>Cooking Time: </b><%= @recipe.cooking_time %></p>
     <p><b>Description: </b><%= @recipe.description %></p>
+    <%= hidden_field_tag :recipe_id, @recipe.id %>
   </div>
 
   <div class='recipeshow-btn'>
-    <span><%= button_to "Generate Shopping list", new_recipe_path %></span>
-    <span><%= button_to "Add New Recipe", new_recipe_path %></span>
-  </div>
+  <%= link_to "Generate Shopping list", new_recipe_path %>
+  <%= link_to "Add ingredients", new_recipe_ingredient_path(@recipe) %>
+</div>
+
+
   <hr>
+  <div class="container">
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark bg-dark">
+      <tr class="header">
+        <th><strong>Food</strong></th>
+        <th><strong>Quantity</strong></th>
+        <th><strong>Value</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <tr>
+          <td><%= ingredient.name %></td>
+          <td><%= ingredient.quantity %></td>
+          <td><%= number_to_currency(ingredient.value, unit: "$") %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </br>
+  </div>
 
   <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
   <%= link_to "Back to recipes", recipes_path %>
