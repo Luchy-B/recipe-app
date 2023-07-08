@@ -1,5 +1,5 @@
 class GeneralShoppingListController < ApplicationController
-    before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     user_food_ids = current_user.foods.pluck(:id)
