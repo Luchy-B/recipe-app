@@ -25,7 +25,7 @@ development:
   <<: *default
   database: recipe_app_development
   username: postgres
-  password: Ble$$ing20
+  password: 19Tracy99
   port: 5432
 
   # The specified database role being used to connect to postgres.
@@ -62,7 +62,7 @@ test:
   <<: *default
   database: recipe_app_test
   username: postgres
-  password: Ble$$ing20
+  password: 19Tracy99
   port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,

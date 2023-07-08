@@ -2,8 +2,11 @@
 
 Rails.application.routes.draw do
   resources :foods, only: [:create, :index, :destroy, :new]
-  resources :shopping_lists, only: [:index]
-  resources :recipes
+  get 'general_shopping_list', to: 'general_shopping_list#index'
+  resources :recipes 
+ 
+  
+  
 
   devise_for :users
 
