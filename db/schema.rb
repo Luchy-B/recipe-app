@@ -25,10 +25,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_08_130725) do
   end
 
   create_table "foods_recipes", id: false, force: :cascade do |t|
-    t.bigint "food_id"
-    t.bigint "recipe_id"
-    t.index ["food_id"], name: "index_foods_recipes_on_food_id"
-    t.index ["recipe_id"], name: "index_foods_recipes_on_recipe_id"
+    t.bigint "food_id", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["food_id", "recipe_id"], name: "index_foods_recipes_on_food_id_and_recipe_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -83,8 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_08_130725) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "foods_recipes", "foods"
-  add_foreign_key "foods_recipes", "recipes"
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "recipe_foods", "recipes"
   add_foreign_key "recipes", "users"
