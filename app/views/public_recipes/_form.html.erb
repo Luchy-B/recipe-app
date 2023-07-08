@@ -1,10 +1,10 @@
-<%= form_with(model: @recipe) do |form| %>
-  <% if @recipe.errors.any? %>
+<%= form_with(model: public_recipe) do |form| %>
+  <% if public_recipe.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+      <h2><%= pluralize(public_recipe.errors.count, "error") %> prohibited this public_recipe from being saved:</h2>
 
       <ul>
-        <% recipe.errors.each do |error| %>
+        <% public_recipe.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -18,12 +18,12 @@
 
   <div>
     <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.text_field :preparation_time %>
+    <%= form.number_field :preparation_time %>
   </div>
 
   <div>
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.text_field :cooking_time %>
+    <%= form.number_field :cooking_time %>
   </div>
 
   <div>
@@ -32,13 +32,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :public %>
-    <%= form.check_box :public, class: "switch-toggle" %>
-  </div>
+  <%= form.label :public %>
+  <%= form.check_box :public, class: "switch-toggle", data: { remote: true, url: public_recipes_path } %>
+</div>
 
-  <div>
-  <%= form.number_field :user_id, id: :food_user_id, class:'form-control', value:current_user.id, type: :hidden %>
-  </div>
 
   <div>
     <%= form.submit %>

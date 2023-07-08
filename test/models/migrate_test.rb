@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GeneralShoppingListControllerTest < ActionDispatch::IntegrationTest
+class MigrateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

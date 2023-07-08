@@ -14,13 +14,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
-  get 'public_recipes/index'
   
   resources :recipes 
     resources :public_recipes
 
   root "foods#index"
-
+  
+  # put 'recipes/:id/toggle_button', to: 'recipes#toggle_action', as: 'toggle_action'
+  post '/toggle', to: 'recipe#toggle'
+  put 'recipes/:id/toggle_button', to: 'recipes#toggle_action', as: 'toggle_action'
+  put 'recipes/:id/toggle_public', to: 'recipes#toggle_public', as: 'toggle_public'
+  
 end
 

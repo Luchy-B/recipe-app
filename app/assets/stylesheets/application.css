@@ -60,4 +60,41 @@
 
 .recipeshow-btn {
   padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Custom styles for the switch toggle button */
+.switch-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  width: 50px;
+  height: 30px;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.switch-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.switch-toggle:checked::before {
+  transform: translateX(20px);
+}
+
+.switch-toggle:checked {
+  background-color: #28a745;
 }

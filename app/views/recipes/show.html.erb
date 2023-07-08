@@ -1,6 +1,13 @@
-<div class='recipe-show'>
-  <%= link_to 'Back to Recipes', recipes_path %>
-  <h2 class='recipe-header'><%= @recipe.name %></h2>
+<p style="color: green"><%= notice %></p>
+
+<%= button_to toggle_public_path, method: :put, class: 'toggle-button' do %>
+  <% if @recipe[:public] %>
+    Toggle Off
+  <% else %>
+    Toggle On
+  <% end %>
+  <% end %>
+
   <div>
     <p><b>Preparation Time: </b><%= @recipe.preparation_time %></p>
     <p><b>Cooking Time: </b><%= @recipe.cooking_time %></p>
@@ -8,11 +15,12 @@
   </div>
 
   <div class='recipeshow-btn'>
-   <button> Generate Shopping list </button>
-    <button>Add Ingredient</button>
+    <span><%= button_to "Generate Shopping list", new_recipe_path %></span>
+    <span><%= button_to "Add New Recipe", new_recipe_path %></span>
   </div>
   <hr>
 
-  <%= link_to "Add Recipe", new_recipe_path %>
   <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+  <%= link_to "Back to recipes", recipes_path %>
+  <%= button_to "Destroy this Recipe", @recipe, method: :delete %>
 </div>

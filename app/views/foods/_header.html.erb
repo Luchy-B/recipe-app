@@ -17,7 +17,7 @@
         <%=link_to 'Recipe', recipes_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Public_recipe</a>
+        <%=link_to 'Public_Recipe', public_recipes_path, class:"nav-link active", class:"nav-link" %>
         </li>
         <% if user_signed_in? %>
         <li class="nav-item">
