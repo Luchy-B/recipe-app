@@ -127,11 +127,16 @@ You can deploy this project using:
 
 ## 👥 Author <a name="authors"></a>
 
-👤 **Sane Myburg**
+👤 **Tracy miranja**
 
 - GitHub: [@Tracymiranja](https://github.com/Tracymiranja)
 - Twitter: [@Tracymiranja](https://twitter.com/Tracymiranja)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/Tracymiranja/)
+
+👤 **blessings **
+
+- GitHub: [@githubhandle](https://github.com/Luchy-B)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/blessingokpara)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
