@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Public recipes</h1>
+
+<% @public_recipes.each do |public_recipe| %>
+  <div class="public_recipe">
+    <h3><%= public_recipe.name %></h3>
+    <p><strong>Preparation Time:</strong> <%= public_recipe.preparation_time %> minutes</p>
+    <p><strong>Cooking Time:</strong> <%= public_recipe.cooking_time %> minutes</p>
+    <p><%= public_recipe.description %></p>
+  </div>
+<% end %>

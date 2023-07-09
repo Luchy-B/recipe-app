@@ -1,0 +1,43 @@
+<%= form_with(model: public_recipe) do |form| %>
+  <% if public_recipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(public_recipe.errors.count, "error") %> prohibited this public_recipe from being saved:</h2>
+
+      <ul>
+        <% public_recipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :preparation_time, style: "display: block" %>
+    <%= form.number_field :preparation_time %>
+  </div>
+
+  <div>
+    <%= form.label :cooking_time, style: "display: block" %>
+    <%= form.number_field :cooking_time %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+  <%= form.label :public %>
+  <%= form.check_box :public, class: "switch-toggle", data: { remote: true, url: public_recipes_path } %>
+</div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

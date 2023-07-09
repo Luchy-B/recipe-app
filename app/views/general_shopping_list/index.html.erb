@@ -1,0 +1,35 @@
+<div class="row align-items-center">
+  <div class="col-12 text-center">
+    <h1> Shopping List</h1>
+  </div>
+</div>
+<div class="row align-items-center">
+  <div class="col text-center">
+    <p>Total items: <%= @recipe_length %></p>
+  </div>
+  <div class="col text-center">
+    <p>Total price: $<%= @total_price %></p>
+  </div>
+</div>
+
+<div class="container">
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark bg-dark">
+    <tr class="header">
+      <th><strong>Ingredient</strong></th>
+      <th><strong>Quantity</strong></th>
+      <th><strong>Value</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe_ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+        <td><%= ingredient.quantity %></td>
+        <td><%= ingredient.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
