@@ -98,3 +98,25 @@
 .switch-toggle:checked {
   background-color: #28a745;
 }
+
+.card {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form .field {
+  margin-bottom: 10px;
+}
+
+.login-form .actions {
+  text-align: center;
+}
+
