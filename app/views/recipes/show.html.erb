@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="toggle align-items-end">
 <%= button_to toggle_public_path, method: :put, class: 'toggle-button' do %>
   <% if @recipe[:public] %>
     Toggle Off
@@ -7,7 +7,7 @@
     Toggle On
   <% end %>
   <% end %>
-
+</div>
   <div>
     <p><b>Preparation Time: </b><%= @recipe.preparation_time %></p>
     <p><b>Cooking Time: </b><%= @recipe.cooking_time %></p>
@@ -15,9 +15,9 @@
     <%= hidden_field_tag :recipe_id, @recipe.id %>
   </div>
 
-  <div class='recipeshow-btn'>
-  <%= link_to "Generate Shopping list", general_shopping_list_path %>
-  <%= link_to "Add ingredients", new_recipe_ingredient_path(@recipe) %>
+  <div class="recipeshow-btn align-items-start justify-content-between">
+  <%= link_to "Generate Shopping list", general_shopping_list_path, class: "btn btn-primary mr-2" %>
+  <%= link_to "Add ingredients", new_recipe_ingredient_path(@recipe), class: "btn btn-primary ml-auto" %>
 </div>
 
 
